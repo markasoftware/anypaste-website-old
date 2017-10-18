@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anypaste - Command line file sharing for hackers</title>
+    <meta name='description' content='Anypaste is a simple file hosting aggregator for Linux and Mac.'>
+    <meta charset='utf8'>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', Verdana, sans-serif;
+        }
+        #all-container-flex {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        #intro {
+            flex: 80vh;
+            background: radial-gradient(circle at top left, lightgreen, aquamarine)
+        }
+        #features {
+            flex: 80vh;
+            background: #505070;
+        }
+        #cta {
+            flex: 35vh;
+            background: linear-gradient(60deg, lightgreen, aquamarine)
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 8vh;
+            line-height: 8vh;
+            color: hsl(300, 90%, 65%);
+            display: flex;
+            align-items: center;
+        }
+        #logo {
+            font-size: 1.5rem;
+            font-family: Ubuntu, sans-serif;
+            font-weight: bold;
+            margin-right: 5rem;
+        }
+        header a {
+            text-decoration: none;
+            color: hsl(300, 50%, 60%);
+            font-weight: semibold;
+            font-size: 1.2rem;
+            margin-right: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id='logo'>ANYPASTE.</div>
+        <a href='https://github.com/markasoftware/anypaste/wiki'>Documentation</a>
+        <a href='https://github.com/markasoftware/anypaste/wiki/TODO'>Plugins</a>
+        <a href='https://github.com/markasoftware/anypaste'>Source Code</a>
+        <a href='#install' class='purple-border'>Install</a>
+    </header>
+    <div id='all-container-flex'>
+        <section id='intro'>
+            <div id='intro-text'>
+
+            </div>
+        </section>
+        <section id='features'>
+
+        </section>
+        <section id='cta'>
+            <a name='install'></a>
+        </section>
+    </div>
+</body>
+</html>
