@@ -4,131 +4,7 @@
     <title>Anypaste - Command line file sharing for hackers</title>
     <meta name='description' content='Anypaste is a simple file hosting aggregator for Linux and Mac.'>
     <meta charset='utf8'>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Open Sans', Verdana, sans-serif;
-        }
-        p {
-            font-size: 1.2rem;
-        }
-        #intro {
-            min-height: 80vh;
-            background: radial-gradient(circle at top left, lightgreen, aquamarine);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 15vh 10%;
-            box-sizing: border-box;
-        }
-        #features {
-            padding: 2rem 0;
-            background: #505070;
-            color: white;
-        }
-        #cta {
-            height: 35vh;
-            background: linear-gradient(60deg, lightgreen, aquamarine);
-            font-size: 2.5rem;
-            color: hsl(200, 50%, 30%);
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 8%;
-        }
-        header {
-            position: absolute;
-            top: 0;
-            left: 10%;
-            width: 80%;
-            height: 8vh;
-            line-height: 8vh;
-            color: hsl(300, 90%, 65%);
-            display: flex;
-            align-items: center;
-        }
-        #logo {
-            font-size: 1.5rem;
-            font-family: Ubuntu, sans-serif;
-            font-weight: bold;
-            margin-right: 5rem;
-        }
-        header a {
-            text-decoration: none;
-            color: hsl(300, 50%, 60%);
-            font-weight: semibold;
-            font-size: 1.2rem;
-            margin-right: 2rem;
-        }
-        code {
-            padding: 0.1rem 0.2rem;
-            background: hsl(300, 40%, 50%);
-            color: white;
-            border-radius: 2px;
-            font-family: Inconsolata, Fira Mono, monospace;
-        }
-        #intro-text {
-            margin: 0 10rem;
-        }
-        #intro-text h1 {
-            font-size: 3rem;
-            color: hsl(222, 35%, 40%);
-            margin: 1rem 0;
-        }
-        #intro-rule {
-            height: 1px;
-            width: 25%;
-            position: relative;
-            left: 10%;
-            background: #777;
-        }
-        #intro-text p {
-            color: #222;
-            width: 32rem;
-            text-align: justify;
-        }
-        #intro-asciinema {
-            width: 35rem;
-        }
-        #features > h1 {
-            font-size: 3.5rem;
-            text-align: center;
-            margin: 0;
-        }
-        #features-rule {
-            position: relative;
-            width: 5%;
-            left: 47.5%;
-            height: 15px;
-            margin: 2rem 0;
-            background: hsl(300, 50%, 70%);
-        }
-        #features-flex {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 10%;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        .feature {
-            width: 20%;
-            min-width: 15rem;
-            padding: 1rem;
-            margin: 1rem;
-            border: 3px dashed cadetblue;
-            border-radius: 5px;
-        }
-        .feature .icon {
-            font-size: 3rem;
-            text-align: center;
-            font-weight: bold;
-            color: aquamarine;
-        }
-        .feature .icon img {
-            height: 3rem;
-        }
-    </style>
+    <link rel='stylesheet' href='all.css'>
 </head>
 <body>
     <header>
@@ -139,9 +15,9 @@
         <a href='#install' class='purple-border'>Install</a>
     </header>
     <section id='intro'>
-        <div id='intro-text'>
+        <div class='title'>
             <h1>Effortless file sharing<br>for hackers.</h1>
-            <div id='intro-rule'></div>
+            <div class='title-rule'></div>
             <p>Anypaste is a file sharing utility that automatically picks the best host for your files. Just run <code>anypaste&nbsp;/path/filename</code> and let the magic happen. Photos will get uploaded to image hosting sites, videos to video sites, code to pastebins, and more! Free and open source; works anywhere you can run a shell script.</p>
         </div>
         <div id='intro-asciinema'>
@@ -152,35 +28,35 @@
         <h1>Features</h1>
         <div id='features-rule'></div>
         <div id='features-flex'>
-            <div class='feature'>
+            <div class='feature dark-item'>
                 <div class='icon'>#!</div>
                 <p>Simple: Anypaste is just a shell script. You don't need to install the right version of python, use a special package manager, or care about dependencies -- you already have them installed.</p>
             </div>
-            <div class='feature'>
+            <div class='feature dark-item'>
                 <div class='icon'><img src='brick.svg'></div>
                 <p>Pluggable: Anypaste has a <strike>powerful</strike> decent plugin system, and makes it easy to add extra uploading sites that aren't supported out of the box.</p>
             </div>
-            <div class='feature'>
+            <div class='feature dark-item'>
                 <div class='icon'><img src='network.svg'></div>
                 <p>Versatile: Anypaste supports a variety of hosting sites, for most common file types: images, videos, code, documents, etc. It will choose the right one for your files automatically. Some need authentication, look at the docs to set that up!</p>
             </div>
-            <div class='feature'>
+            <div class='feature dark-item'>
                 <div class='icon'><img src='face.svg'></div>
                 <p>Does what you want: Will automatically tarball directories, can read from stdin, etc. When it should work, it does.</p>
             </div>
-            <div class='feature'>
+            <div class='feature dark-item'>
                 <div class='icon'><img src='tools.svg'></div>
                 <p>Configurable: With over 3 command line options, you can make anypaste do anything you want, as long as what you want to do is select a plugin! But seriously: you can use interactive mode, bypass plugin compatibility checks, and more.</p>
             </div>
-            <div class='feature'
->                <div class='icon'><img src='github.svg'></div>
+            <div class='feature dark-item'>
+                <div class='icon'><img src='github.svg'></div>
                 <p>Free: Anypaste is licensed under the GPLv3. Basically, I don't have to pay people who contribute to it! PRs welcome.</p>
             </div>
         </div>
     </section>
     <section id='cta'>
         <a name='install'></a>
-        <div>Install Anypaste: <code>sudo curl -o /usr/bin/anypaste https://anypaste.xyz/sh</code></div>
+        <div>Install Anypaste: <code>sudo curl -o /usr/bin/anypaste https://anypaste.xyz/sh | sudo chmod +x /usr/bin/anypaste</code></div>
     </section>
 </body>
 </html>
