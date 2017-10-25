@@ -40,6 +40,7 @@ header {
     color: hsl(300, 90%, 65%);
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 #logo {
     font-size: 1.5rem;
@@ -136,6 +137,7 @@ code {
 }
 .two-panel-title {
     flex: 30%;
+    height: 8rem;
     box-sizing: border-box;
     padding: 1rem 0 0 5rem;
     font-size: 3rem;
@@ -154,6 +156,52 @@ code {
 .two-panel-content {
     flex: 70%;
     background: #505070;
-    padding: 7rem 3rem;
+    padding: 3rem;
     box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.two-panel-content:nth-child(2) {
+    border-top-left-radius: 10px;
+}
+.plugin {
+    color: white;
+    max-width: 40rem;
+}
+.plugin h1 {
+    margin-top: 0;
+    color: hsl(160, 55%, 65%);
+}
+.tags {
+    display: flex;
+}
+.tags div {
+    margin-right: 1rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+.tags .red {
+    background: hsl(0, 50%, 50%);
+}
+.tags .orange {
+    background: hsl(33, 80%, 48%);
+}
+.tags .blue {
+    background: hsl(177, 65%, 40%);
+}
+.desc {
+    margin: 0.8rem 0;
+}
+.plugin strong {
+    color: hsl(120, 65%, 75%);
+}
+.links {
+    margin-top: 0.8rem;
+}
+.links a {
+    color: aquamarine;
+}
+ul {
+    margin: 0;
+    list-style-type: none;
 }

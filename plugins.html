@@ -10,9 +10,9 @@
     <header>
         <a href='/' id='logo'>ANYPASTE.</a>
         <a href='https://github.com/markasoftware/anypaste/wiki'>Documentation</a>
-        <a href='https://github.com/markasoftware/anypaste/wiki/TODO'>Plugins</a>
+        <a href='/plugins.html'>Plugins</a>
         <a href='https://github.com/markasoftware/anypaste'>GitHub</a>
-        <a href='#install' class='purple-border'>Install</a>
+        <a href='/#install' class='purple-border'>Install</a>
     </header>
     <div class='title'>
         <h1>Plugins</h1>
@@ -21,9 +21,143 @@
     </div>
     <div class='two-panel-flex'>
         <div class='two-panel-title'><a name='videos' href='#videos'>Videos</a></div>
-        <div class='two-panel-content'><br><br><br><br></div>
+        <div class='two-panel-content'>
+
+            <div class='plugin dark-item'>
+                <h1>Sendvid</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>Supports deletion and metadata editing for uploaded videos.</div>
+                <strong>Exact plugin name:</strong> <code>sendvid</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='http://sendvid.com'>Sendvid Homepage</a></div>
+            </div>
+
+            <div class='plugin dark-item'>
+                <h1>Streamable</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='red'>Requires Authentication</div></div>
+                <div class='desc'>Super simple, Has ads. A standard Streamable account is required for authentation.</div>
+                <strong>Exact plugin name:</strong> <code>streamable</code><br>
+                <strong>Configuration:</strong><ul>
+                    <li><code>streamable_email</code>: Streamable account email</li>
+                    <li><code>streamable_password</code>: Streamable account password</li>
+                </ul><br>
+                <div class='links'><a href='https://streamable.com'>Streamable Homepage</a></div>
+            </div>
+
+            <div class='plugin dark-item'>
+                <h1>Gfycat</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>Meant for gifs, so strips audio and truncates videos beyond 60 seconds.</div>
+                <strong>Exact plugin name:</strong> <code>gfycat</code><br>
+                <strong>Configuration:</strong><ul>
+                    <li><code>gfycat_duplicates</code>: Set to non-empty string to enable duplicate-checking (if your video is already on gfycat, you'll get the link to the existing one).</li>
+                </ul><br>
+                <div class='links'><a href='https://gfycat.com'>Gfycat Homepage</a></div>
+            </div>
+
+        </div>
         <div class='two-panel-title'><a name='images' href='#images'>Images</a></div>
-        <div class='two-panel-content'><br><br><br><br></div>
+        <div class='two-panel-content'>
+
+            <div class='plugin dark-item'>
+                <h1>Vgy.me</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>Supports deletion of uploaded images.</div>
+                <strong>Exact plugin name:</strong> <code>vgyme</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='https://vgy.me'>Vgy.me Homepage</a></div>
+            </div>
+
+            <div class='plugin dark-item'>
+                <h1>Tinyimg</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>Incredibly simple, direct links only.</div>
+                <strong>Exact plugin name:</strong> <code>tinyimg</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='https://tinyimg.io'>Tinyimg Homepage</a></div>
+            </div>
+
+        </div>
+        <div class='two-panel-title'><a name='audio' href='#audio'>Audio</a></div>
+        <div class='two-panel-content'>
+
+            <div class='plugin dark-item'>
+                <h1>Instaud.io</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>No comments.</div>
+                <strong>Exact plugin name:</strong> <code>instaudio</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='https://instaud.io'>Instaud.io Homepage</a></div>
+            </div>
+
+        </div>
+        <div class='two-panel-title'><a name='text' href='#text'>Plain Text &amp; Code</a></div>
+        <div class='two-panel-content'>
+
+            <div class='plugin dark-item'>
+                <h1>Hastebin</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div><div class='red'>Ephemeral</div></div>
+                <div class='desc'>Syntax highlighting, easy forking. Files are deleted 30 days after last view!</div>
+                <strong>Exact plugin name:</strong> <code>hastebin</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='https://hastebin.com'>Hastebin Homepage</a></div>
+            </div>
+
+            <div class='plugin dark-item'>
+                <h1>ix.io</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>Super simple, direct links only.</div>
+                <strong>Exact plugin name:</strong> <code>ixio</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='http://ix.io'>ix.io Homepage</a></div>
+            </div>
+
+            <div class='plugin dark-item'>
+                <h1>Sprunge.us</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div></div>
+                <div class='desc'>Super simple, direct links only. Very similar to ix.io.</div>
+                <strong>Exact plugin name:</strong> <code>sprunge</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='http://sprunge.us'>Sprunge.us Homepage</a></div>
+            </div>
+
+        </div>
+        <div class='two-panel-title'><a name='documents' href='#documents'>Documents</a></div>
+        <div class='two-panel-content'>
+
+            <div class='plugin dark-item'>
+                <h1>Docdroid</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='red'>Requires Authentication</div></div>
+                <div class='desc'>Very nice, automatically converts documents for cross-platform viewing. Needs an API key to function.</div>
+                <strong>Exact plugin name:</strong> <code>docdroid</code><br>
+                <strong>Configuration:</strong><ul>
+                    <li><code>docdroid_access_token</code>: API access token for docdroid. With an account, go to settings-&gt;API-&gt;Create New Token, and enable the <code>upload_documents</code> scope.</li>
+                </ul><br>
+                <div class='links'><a href='https://docdroid.net'>Docdroid Homepage</a></div>
+            </div>
+
+        </div>
+        <div class='two-panel-title'><a name='generic' href='#generic'>Generic</a></div>
+        <div class='two-panel-content'>
+
+            <div class='plugin dark-item'>
+                <h1>Jirafeau</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div><div class='red'>Ephemeral</div></div>
+                <div class='desc'>Supports deletion of uploaded files, FOSS backend! Files deleted after 1 month.</div>
+                <strong>Exact plugin name:</strong> <code>jirafeau</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='https://jirafeau.net'>Jirafeau Homepage</a></div>
+            </div>
+
+            <div class='plugin dark-item'>
+                <h1>File.io</h1>
+                <div class='tags'><div class='orange'>Built-In</div><div class='blue'>Authenticationless</div><div class='red'>Ephemeral</div></div>
+                <div class='desc'>Wicked fast and dead simple. Files deleted after 14 days.</div>
+                <strong>Exact plugin name:</strong> <code>fileio</code><br>
+                <strong>Configuration:</strong> None<br>
+                <div class='links'><a href='https://file.io'>File.io Homepage</a></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
