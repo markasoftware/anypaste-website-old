@@ -4,6 +4,7 @@
     <title>Anypaste Plugins</title>
     <meta name='description' content='Official and comprehensive list of Anypaste plugins'>
     <meta charset='utf8'>
+    <meta name='viewport' content='width=device-width, initial-scale=0.8'>
     <link rel='stylesheet' href='all.css'>
 </head>
 <body class='two-panel-body'>
@@ -46,10 +47,12 @@
                 Upload with a specific plugin: <code>anypaste -p gfycat /path/filename</code><br>
                 Upload with a specific plugin, bypassing compatibility checks: <code>anypaste -fp gfycat /path/filename</code><br>
                 Upload with a specific plugin, even if its not in the config file: <code>anypaste -xp gfycat /path/filename</code><br>
-                Upload with interactive mode, which will prompt about which plugin to use: <code>anypaste -i /path/filename</code>
+                Upload with interactive mode, which will prompt about which plugin to use: <code>anypaste -i /path/filename</code><br>
+                <br>
+                For more in-depth information about command-line options, run <code>anypaste -h</code> to display the built-in help text.
             </div>
         </div>
-        <div class='two-panel-title'><a name='config' href='#config'>Configuration</a></div>
+        <div class='two-panel-title'><a name='config' href='#config'>Config</a></div>
         <div class='two-panel-content'>
             <div>
                 The configuration file is usually in <code>~/.config/anypaste.conf</code>. The only time it won't be is if <code>$XDG_CONFIG_HOME</code> is set, in which case <code>anypaste.conf</code> will go there.

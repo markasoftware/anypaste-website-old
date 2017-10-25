@@ -64,7 +64,7 @@ code {
 }
 .title {
     margin: 0 10rem;
-    width: 32rem;
+    max-width: 32rem;
 }
 .two-panel-body .title {
     margin: 10rem auto;
@@ -83,7 +83,6 @@ code {
 }
 .title p {
     color: #222;
-    width: 32rem;
     text-align: justify;
 }
 #intro-asciinema {
