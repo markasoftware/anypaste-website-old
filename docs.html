@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anypaste Plugins</title>
+    <meta name='description' content='Official and comprehensive list of Anypaste plugins'>
+    <meta charset='utf8'>
+    <link rel='stylesheet' href='all.css'>
+</head>
+<body class='two-panel-body'>
+    <header>
+        <a href='/' id='logo'>ANYPASTE.</a>
+        <a href='docs.html'>Documentation</a>
+        <a href='plugins.html'>Plugins</a>
+        <a href='https://github.com/markasoftware/anypaste'>GitHub</a>
+        <a href='/#install' class='purple-border'>Install</a>
+    </header>
+    <div class='title'>
+        <h1>Documentation</h1>
+        <div class='title-rule'></div>
+        <p>This is the official documentation for Anypaste. Found a grammar mistake or something unclear? Contribute to this on the <a href='https://github.com/markasoftware/anypaste-website'>anypaste-website repo</a>.
+    </div>
+    <div class='two-panel-flex'>
+        <div class='two-panel-title'><a name='install' href='#install'>Installation</a></div>
+        <div class='two-panel-content'>
+            <!-- it didn't respect line breaks when I put stuff directly in here, so wrappers I guess -->
+            <div>
+                Anypaste is just a single executable file/shell script. It's hosted at <a href='https://anypaste.xyz/sh'>anypaste.xyz/sh</a>, or you can download it from the <a href='https://raw.githubusercontent.com/markasoftware/anypaste/master/anypaste'>GitHub repo</a>.
+                Put it somewhere where you can run it (<code>/usr/bin/anypaste</code> is a nice spot), mark it executable, then you're ready to go!
+                The quickest way to install is just the following command: <code>sudo curl -o /usr/bin/anypaste https://anypaste.xyz/sh &amp;&amp; sudo chmod +x /usr/bin/anypaste</code><br>
+                <br>
+                To update anypaste, just overwrite the old executable with the new one.
+                If new plugins were added in a release, you have two options: either delete your config file, and anypaste will create a new one with the new plugins enabled automatically, or you can manually add the new plugins to <code>ap_plugins</code> in your config file.
+            </div>
+        </div>
+        <div class='two-panel-title'><a name='basic' href='#basic'>Basic Usage</a></div>
+        <div class='two-panel-content'>
+            <div>
+                Upload a single file: <code>anypaste /path/filename</code><br>
+                Upload multiple files: <code>anypaste /path/file1 /path/file2</code><br>
+                Upload stdin: <code>echo 'Upload me!' | anypaste</code><br>
+                Upload files and stdin: <code>echo 'Upload me!' | anypaste - /path/file1 /path/file2</code><br>
+                <br>
+                All of these commands will pick the "best" plugin automatically: The first one listed in your config file that's compatible with the specified file.
+                There are situations, however, where you'll want to override this behavior, such as if you want to use a certain plugin or use an incompatible plugin.<br>
+                <br>
+                Upload with a specific plugin: <code>anypaste -p gfycat /path/filename</code><br>
+                Upload with a specific plugin, bypassing compatibility checks: <code>anypaste -fp gfycat /path/filename</code><br>
+                Upload with a specific plugin, even if its not in the config file: <code>anypaste -xp gfycat /path/filename</code><br>
+                Upload with interactive mode, which will prompt about which plugin to use: <code>anypaste -i /path/filename</code>
+            </div>
+        </div>
+        <div class='two-panel-title'><a name='config' href='#config'>Configuration</a></div>
+        <div class='two-panel-content'>
+            <div>
+                The configuration file is usually in <code>~/.config/anypaste.conf</code>. The only time it won't be is if <code>$XDG_CONFIG_HOME</code> is set, in which case <code>anypaste.conf</code> will go there.
+                You can override the default configuration location using the <code>-c</code> command-line parameter.<br>
+                <br>
+                The config file is automatically created the first time you run anypaste. You can probably figure out how it works by just reading the default one. It's just shell script, but in case you aren't familiar with them, here's how it works:<br>
+                <br>
+                Arrays: <code>export arr_name=('arr_val_1' 'arr_val_2' 'arr_val_3')</code> (you don't need <code>export</code> for <code>ap_plugins</code>)<br>
+                Strings: <code>export var_name='var_value'</code><br>
+                <br>
+                The only required configuration option is <code>ap_plugins</code>. This is the list of enabled plugins: If you install a new plugin, add it to this list. If you want to disable a default plugin, remove it!
+                If multiple plugins are compatible, the first one in the array is selected, so order matters.
+                You can find out what config options plugins support/require on <a href='plugins.html'>the plugins list</a>.
+            </div>
+        </div>
+        <div class='two-panel-title'><a name='plugins' href='#plugins'>Plugins</a></div>
+        <div class='two-panel-content'>
+            <div>
+                Each upload site in Anypaste is represented by a plugin. Each plugin is an executable file (except for the built-in ones, they're special). It's recommended to put plugin executables in <code>~/.anypaste-plugins</code> (you'll need to create the folder).
+                So, the basic procedure for installing a plugin is:
+                <ol>
+                    <li>Create <code>~/.anypaste-plugins</code> if it does not yet exist: <code>mkdir -p ~/.anypaste-plugins</code></li>
+                    <li>Download the plugin executable into <code>~/.anypaste-plugins</code>: <code>curl -o ~/.anypaste-plugins/example example.com/example</code></li>
+                    <li>Mark the plugin as executable: <code>chmod +x ~/.anypaste-plugins/example</code></li>
+                    <li>Add the plugin to the <code>ap_plugins</code> array in your config file: <code>vim ~/.config/anypaste.conf</code></li>
+                </ol>
+                Anypaste uses the <code>ap_plugins</code> array in your config file to determine which plugins are enabled. You need to add new plugins to it, and can disable built-in plugins by removing them from it.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

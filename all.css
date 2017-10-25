@@ -44,7 +44,7 @@ header {
 }
 #logo {
     font-size: 1.5rem;
-    font-family: Ubuntu, sans-serif;
+    font-family: Ubuntu, Verdana, sans-serif;
     font-weight: bold;
     margin-right: 5rem;
 }
@@ -139,7 +139,7 @@ code {
     flex: 30%;
     height: 8rem;
     box-sizing: border-box;
-    padding: 1rem 0 0 5rem;
+    padding: 1rem 0 0 3vw;
     font-size: 3rem;
     font-weight: bold;
     text-decoration: none;
@@ -154,18 +154,19 @@ code {
     color: hsl(300, 50%, 60%);
 }
 .two-panel-content {
+    color: white;
     flex: 70%;
     background: #505070;
     padding: 3rem;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
+    font-size: 1.1rem;
 }
 .two-panel-content:nth-child(2) {
     border-top-left-radius: 10px;
 }
 .plugin {
-    color: white;
     max-width: 40rem;
 }
 .plugin h1 {
@@ -198,7 +199,7 @@ code {
 .links {
     margin-top: 0.8rem;
 }
-.links a {
+.two-panel-content a {
     color: aquamarine;
 }
 ul {
