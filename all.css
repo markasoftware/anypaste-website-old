@@ -198,6 +198,12 @@ code {
 .links {
     margin-top: 0.8rem;
 }
+.links a {
+    margin-left: 1rem;
+}
+.links a:first-child {
+    margin-left: 0;
+}
 .two-panel-content a {
     color: aquamarine;
 }

@@ -68,7 +68,7 @@
                 You can find out what config options plugins support/require on <a href='plugins.html'>the plugins list</a>.
             </div>
         </div>
-        <div class='two-panel-title'><a name='plugins' href='#plugins'>Plugins</a></div>
+        <div class='two-panel-title'><a name='plugins' href='#plugins'>Using Plugins</a></div>
         <div class='two-panel-content'>
             <div>
                 Each upload site in Anypaste is represented by a plugin. Each plugin is an executable file (except for the built-in ones, they're special). It's recommended to put plugin executables in <code>~/.anypaste-plugins</code> (you'll need to create the folder).
@@ -80,6 +80,41 @@
                     <li>Add the plugin to the <code>ap_plugins</code> array in your config file: <code>vim ~/.config/anypaste.conf</code></li>
                 </ol>
                 Anypaste uses the <code>ap_plugins</code> array in your config file to determine which plugins are enabled. You need to add new plugins to it, and can disable built-in plugins by removing them from it.
+            </div>
+        </div>
+        <div class='two-panel-title'><a name='authentication' href='#authentication'>Authenticating to Plugins</a></div>
+        <div class='two-panel-content'>
+            <div>
+                Some plugins, such as Streamable and Docdroid, do not work out-of-the-box. Streamable requires an account (no anonymous uploading), and Docdroid needs an API key.
+                These are called "Authenticated Plugins" because they need authentication to function. You can authenticate by placing authentication information into <code>anypaste.conf</code>.
+                The exact way to do this varies by plugin. With streamable, you need to set the <code>streamable_email</code> and <code>streamable_password</code> options in your config
+                file to the email and password for your Streamable account. For example:<br>
+                <br>
+                <code>
+                    export streamable_email='spamhereplease@markasoftware.com'<br>
+                    export streamable_password='hunter2'
+                </code><br>
+                <br>
+                There are some comments in the default config file to help walk you through this.
+            </div>
+        </div>
+        <div class='two-panel-title'><a name='plugins-dev' href='#plugins-dev'>Developing Plugins</a></div>
+        <div class='two-panel-content'>
+            <div>
+                Creating a plugin for Anypaste is fairly simple. Just create an executable which takes a single command-line argument, and can read environment variables.
+                Here are the different things that may be passed as a command-line argument, and what you should do for each one:<br>
+                <br>
+                <code>get_required_config</code>: Your plugin should return a newline-separated list of required configuration options.
+                If these options are not set, your plugin will be considered incompatible, and the user will be prompted.<br>
+                <br>
+                <code>check_eligibility</code>: Your plugin should check whether the current file is compatible.
+                The absolute path to the file will be in the environment variable <code>ap_path</code>, and the mime type of the file (determined using <code>file --mime-type</code>) will be in <code>ap_mime</code>.
+                It's ok for your plugin to print some sort of message if the file is "almost" compatible (for example, correct file type but over size limit).<br>
+                <br>
+                <code>upload</code>: Your plugin should upload the current file (in env variable <code>ap_path</code>). Assume that the file has already been checked for compatibility.<br>
+                <br>
+                This might seem a bit confusing, and it is! The easiest way to learn how plugins work and how to make one is to look at the built-in plugins in the source code or the
+                <a href='https://github.com/markasoftware/anypaste-magaimg'>example plugin for MAGAimg.net</a>
             </div>
         </div>
     </div>
