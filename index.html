@@ -20,10 +20,8 @@
             <h1>Effortless file sharing<br>for hackers.</h1>
             <div class='title-rule'></div>
             <p>
-                Tired of waiting for Firefox to open just so you can share an image to IRC? Want to share a directory but can never remember the right options for tar?
-                Can't upload your code to a pastebin because you are keeping some Really Important Stuff on your clipboard? Even if you aren't, you'll love Anypaste!
-                Just run <code>anypaste /path/filename</code> and Anypaste will automatically use the file's MIME type to upload your file to a compatible hosting site.
-                Just wait a few seconds and it will give you the link.
+                Run <code>anypaste /path/to/file</code> to upload any file. Anypaste will find a good hosting site automatically, based on the file type.
+                Anypaste is a command-line program available for Linux, Mac, and other *nix based systems.
             </p>
         </div>
         <div id='intro-asciinema'>
@@ -64,7 +62,7 @@
         <a name='install'></a>
         <div>
             Install Anypaste:<br>
-            <code>sudo curl -o /usr/bin/anypaste https://anypaste.xyz/sh &amp;&amp; sudo chmod +x /usr/bin/anypaste</code>
+            <code>sudo mkdir -p /usr/local/bin/ &amp;&amp; sudo curl -o /usr/local/bin/anypaste https://anypaste.xyz/sh &amp;&amp; sudo chmod +x /usr/local/bin/anypaste</code>
         </div>
     </section>
 </body>

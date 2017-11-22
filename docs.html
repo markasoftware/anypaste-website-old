@@ -55,17 +55,19 @@
         <div class='two-panel-title'><a name='config' href='#config'>Config</a></div>
         <div class='two-panel-content'>
             <div>
-                The configuration file is usually in <code>~/.config/anypaste.conf</code>. The only time it won't be is if <code>$XDG_CONFIG_HOME</code> is set, in which case <code>anypaste.conf</code> will go there.
-                You can override the default configuration location using the <code>-c</code> command-line parameter.<br>
+                Anypaste uses a configuration file to disable or enable plugins and provide extra options to plugins. As of Anypaste 1.0.3, it operates without a config file by default.
+                If you want to use a config file, create a default one by running <code>anypaste -C</code>. It will tell you where it was placed
+                (usually <code>~/.config/anypaste.conf</code> on Linux and <code>~/.anypaste.conf</code> on Mac). The default file is fairly self-explanatory,
+                you should be able to figure out how to use it based on the comments in it.<br>
                 <br>
-                The config file is automatically created the first time you run anypaste. You can probably figure out how it works by just reading the default one. It's just shell script, but in case you aren't familiar with them, here's how it works:<br>
-                <br>
+                The anypaste config file is just a simple shell script that sets variables. Here's a primer on how to set variables:<br>
                 Arrays: <code>export arr_name=('arr_val_1' 'arr_val_2' 'arr_val_3')</code> (you don't need <code>export</code> for <code>ap_plugins</code>)<br>
                 Strings: <code>export var_name='var_value'</code><br>
+                Comments: <code># Comments here</code><br>
                 <br>
-                The only required configuration option is <code>ap_plugins</code>. This is the list of enabled plugins: If you install a new plugin, add it to this list. If you want to disable a default plugin, remove it!
-                If multiple plugins are compatible, the first one in the array is selected, so order matters.
-                You can find out what config options plugins support/require on <a href='plugins.html'>the plugins list</a>.
+                The main configuration option you'll want to deal with is <code>ap_plugins</code>. It's an array of enabled plugins.
+                If multiple plugins are compatible, the first one will be used, so order matters. It's the only option which doesn't need <code>export</code> before it.
+                You can find a list of plugins and options they support <a href='plugins.html'>here</a>.
             </div>
         </div>
         <div class='two-panel-title'><a name='plugins' href='#plugins'>Using Plugins</a></div>
